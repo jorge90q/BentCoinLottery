@@ -9,15 +9,12 @@
 
 library(stats)
 
-arr <- array(0,10)
-for (i in 1:10){
-  arr[i] <- if (runif(1) < 0.1) 1 else 0
-}
-
-for (j in 1:100){
-  arr <- array(0,10)
-  for (i in 1:10){
-    arr[i] <- if (runif(1) < 0.1) 1 else 0
+trials = 100
+for (j in 1:trials){
+  times_flipped = 10
+  coin_flip_heads <- array(0,times_flipped)
+  for (i in times_flipped){
+    coin_flip_heads[i] <- if (runif(1) < 0.1) 1 else 0
   }
-  print(arr)
+  print(coin_flip_heads)
 }
